@@ -4,9 +4,9 @@ const fetchWeather = async (city) => {
 	try{
 		const response = await fetch(`${url}${city}&appid=${config.apiKey}`);
     	const information = await response.json();
-    	console.log(information) ;
+    	return information;
 	} catch (err) {
-	console.log(err) ;
+	return err;
 	}
 };
 
