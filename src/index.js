@@ -1,12 +1,12 @@
 import fetchWeather from './fetch';
 import {
-	newForm,
-	newCityName,
-	mainContainer,
-	resultDiv,
-	nameContainer,
-	weatherTypeContainer,
-	tempContainer,
+  newForm,
+  newCityName,
+  mainContainer,
+  resultDiv,
+  nameContainer,
+  weatherTypeContainer,
+  tempContainer,
 } from './domcontroller';
 
 const clearElement = (element) => {
@@ -18,25 +18,31 @@ const clearElement = (element) => {
 const display = async (city) => {
   clearElement(mainContainer);
   const res = await fetchWeather(city);
-  if(res.cod == 200){
-  nameContainer.innerText = `City name: ${res.name}`;
-  weatherTypeContainer.innerText = `Weather type: ${res.weather[0].description}`;
-  tempContainer.innerText = `Temperature in Fahrenheit: ${res.main.temp}`;
+  if (res.cod === 200) {
+    nameContainer.innerText = `City name: ${res.name}`;
+    weatherTypeContainer.innerText = `Weather type: ${res.weather[0].description}`;
+    tempContainer.innerText = `Temperature in Fahrenheit: ${res.main.temp}`;
 
-  weatherTypeContainer.classList.add('city-name');
-  tempContainer.classList.add('city-name');
-  document.body.className = 'hazy';
-  resultDiv.appendChild(nameContainer);
-  resultDiv.appendChild(weatherTypeContainer);
-  resultDiv.appendChild(tempContainer);
-  mainContainer.appendChild(resultDiv);
+    weatherTypeContainer.classList.add('city-name');
+    tempContainer.classList.add('city-name');
+    if (res.weather[0].main === 'Rain') {
+      document.body.className = 'rainy';
+    } else if (res.weather[0].main === 'Haze') {
+      document.body.className = 'hazy';
+    } else if (res.weather[0].main === 'Clouds') {
+      document.body.className = 'cloudy';
+    } else {
+      document.body.className = 'clear';
+    }
+    resultDiv.appendChild(nameContainer);
+    resultDiv.appendChild(weatherTypeContainer);
+    resultDiv.appendChild(tempContainer);
+    mainContainer.appendChild(resultDiv);
+  } else {
+    document.body.className = 'error-pic';
+    mainContainer.innerHTML = res.message;
+    mainContainer.classList.add('city-name');
   }
-  else{
-  	document.body.className = 'error-pic';
-  	mainContainer.innerHTML = res.message;
-  	mainContainer.classList.add('city-name');
-  }
-  
 };
 
 newForm.addEventListener('submit', e => {
