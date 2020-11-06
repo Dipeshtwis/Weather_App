@@ -1,8 +1,13 @@
 import fetchWeather from './fetch';
-
-const newForm = document.querySelector('[data-new-form]');
-const newCityName = document.querySelector('[data-new-city-input]');
-const mainContainer = document.getElementById('container');
+import {
+	newForm,
+	newCityName,
+	mainContainer,
+	resultDiv,
+	nameContainer,
+	weatherTypeContainer,
+	tempContainer,
+} from './domcontroller';
 
 const clearElement = (element) => {
   while (element.firstChild) {
@@ -13,21 +18,25 @@ const clearElement = (element) => {
 const display = async (city) => {
   clearElement(mainContainer);
   const res = await fetchWeather(city);
-  const resultDiv = document.createElement('div');
-  const nameContainer = document.createElement('p');
-  nameContainer.classList.add('city-name');
-  const weatherTypeContainer = document.createElement('p');
-  const tempContainer = document.createElement('p');
+  if(res.cod == 200){
   nameContainer.innerText = `City name: ${res.name}`;
   weatherTypeContainer.innerText = `Weather type: ${res.weather[0].description}`;
-  document.body.classList.add('rainy');
   tempContainer.innerText = `Temperature in Fahrenheit: ${res.main.temp}`;
+
   weatherTypeContainer.classList.add('city-name');
   tempContainer.classList.add('city-name');
+  document.body.className = 'hazy';
   resultDiv.appendChild(nameContainer);
   resultDiv.appendChild(weatherTypeContainer);
   resultDiv.appendChild(tempContainer);
   mainContainer.appendChild(resultDiv);
+  }
+  else{
+  	document.body.className = 'error-pic';
+  	mainContainer.innerHTML = res.message;
+  	mainContainer.classList.add('city-name');
+  }
+  
 };
 
 newForm.addEventListener('submit', e => {

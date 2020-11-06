@@ -6,6 +6,15 @@
 	padding: 0;
 }
 
+body {
+
+}
+
+h1 {
+	font-size: 2.5rem;
+	font-weight: 700;
+}
+
 .form-container,
 .container {
 	text-align: center;
@@ -33,13 +42,14 @@
 }
 
 .city-name {
-	padding: .3rem;
-	font-size: 1.4rem;
+	padding: .5rem;
+	font-size: 1.7rem;
 	font-weight: 500;
 }
 
 .hazy,
-.rainy {
+.rainy,
+.error-pic {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
@@ -50,5 +60,9 @@
 
 .rainy {
 	background: url("../img/rain.jpg");
+}
+
+.error-pic {
+	background: url("../img/error.jpg") center;
 }
 
