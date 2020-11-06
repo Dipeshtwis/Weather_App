@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.form-container,
+.container {
+	text-align: center;
+	padding: 3rem;
+}
+
+.inputbar {
+	padding: .4rem;
+	width: 10rem;
+	border-radius: 3rem;
+	transition: all 0.5s;
+}
+
+.inputbar:focus {
+	width: 15rem;
+}
+
+.searchbar {
+	padding: .4rem;
+	width: 5rem;
+	border-radius: 1rem;
+}
+
+.container {
+}
+
+.city-name {
+	padding: .3rem;
+	font-size: 1.4rem;
+	font-weight: 500;
+}
+
+.hazy,
+.rainy {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+.hazy {
+	background: url("../img/haze.jpg");	
+}
+
+.rainy {
+	background: url("../img/rain.jpg");
+}
+
