@@ -42,7 +42,7 @@ This is a weather application made using javascript. A user can search for any c
 
 ## Live Demo Link <a name = "ll"></a>
 
-[Live Demo](https://dipeshtwis.github.io/Weather_App/)
+[Live Demo](https://worldweatherinfo.netlify.app/)
 
 
 ## Getting Started <a name = "gs"></a>
