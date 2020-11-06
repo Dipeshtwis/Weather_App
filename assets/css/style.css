@@ -49,6 +49,8 @@ h1 {
 
 .hazy,
 .rainy,
+.cloudy,
+.clear,
 .error-pic {
   background-repeat: no-repeat;
   background-size: cover;
@@ -60,6 +62,14 @@ h1 {
 
 .rainy {
 	background: url("../img/rain.jpg");
+}
+
+.cloudy {
+	background: url("../img/cloud.jpg");
+}
+
+.clear {
+	background: url("../img/clear.jpg") center;
 }
 
 .error-pic {
