@@ -15,11 +15,15 @@ const display = async (city) => {
   const res = await fetchWeather(city);
   const resultDiv = document.createElement('div');
   const nameContainer = document.createElement('p');
+  nameContainer.classList.add('city-name');
   const weatherTypeContainer = document.createElement('p');
   const tempContainer = document.createElement('p');
-  nameContainer.innerText = `Name of the city: ${res.name}`;
+  nameContainer.innerText = `City name: ${res.name}`;
   weatherTypeContainer.innerText = `Weather type: ${res.weather[0].description}`;
-  tempContainer.innerText = `City Temperature in Fahrenheit: ${res.main.temp}`;
+  document.body.classList.add('rainy');
+  tempContainer.innerText = `Temperature in Fahrenheit: ${res.main.temp}`;
+  weatherTypeContainer.classList.add('city-name');
+  tempContainer.classList.add('city-name');
   resultDiv.appendChild(nameContainer);
   resultDiv.appendChild(weatherTypeContainer);
   resultDiv.appendChild(tempContainer);
