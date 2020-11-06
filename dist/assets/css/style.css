@@ -6,10 +6,6 @@
 	padding: 0;
 }
 
-body {
-
-}
-
 h1 {
 	font-size: 2.5rem;
 	font-weight: 700;
@@ -18,7 +14,7 @@ h1 {
 .form-container,
 .container {
 	text-align: center;
-	padding: 3rem;
+	padding: 2.5rem;
 }
 
 .inputbar {
@@ -76,6 +72,15 @@ h1 {
 
 .error-pic {
 	background: url("../img/error.jpg") center;
+}
+
+.world-para {
+	font-size: 1.4rem;
+	font-weight: 400;
+}
+.world {
+	background: url("../img/globe.jpg") center;
+	padding: 17rem;
 }
 
 /* slider btn */

@@ -39,19 +39,21 @@ const display = async (city) => {
     mainContainer.appendChild(tswitch);
     nameContainer.innerText = `Location: ${res.name}, ${res.sys.country}`;
     weatherTypeContainer.innerText = `Weather type: ${res.weather[0].description}`;
-    tempContainer.innerText = `Temperature: ${(res.main.temp) / 10}`;
+    let tempValue = ((res.main.temp) / 10).toFixed(2);
+    tempContainer.innerText = `Temperature: ${tempValue}`;
     humidityContainer.innerText = `Humidity: ${res.main.humidity} %`;
     tempContainer.appendChild(tempType);
     tempType.innerText = ' ℃';
     const mainswitch = document.getElementById('mainSwitch');
     mainswitch.innerText = 'convert in ℉';
-    const { temp } = res.main;
+
     mainswitch.addEventListener('click', e => {
       e.preventDefault();
       mainswitch.innerText = `convert in ${tempType.innerText}`;
-      const switched = convertTemp(temp, tempType.innerText);
+      const switched = convertTemp(tempValue, tempType.innerText);
+      tempValue = switched.temp;
       tempType.innerText = `${switched.type}`;
-      tempContainer.innerText = `Temperature: ${switched.temp}`;
+      tempContainer.innerText = `Temperature: ${tempValue}`;
       tempContainer.appendChild(tempType);
     });
 
