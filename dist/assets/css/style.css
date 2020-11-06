@@ -1,0 +1,92 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 2.5rem;
+	font-weight: 700;
+}
+
+.form-container,
+.container {
+	text-align: center;
+	padding: 2.5rem;
+}
+
+.inputbar {
+	padding: .4rem;
+	width: 10rem;
+	border-radius: 3rem;
+	transition: all 0.5s;
+}
+
+.inputbar:focus {
+	width: 15rem;
+}
+
+.searchbar {
+	padding: .4rem;
+	width: 5rem;
+	border-radius: 1rem;
+}
+
+.container {
+	padding: 10rem;
+	border: 4px solid whitesmoke;
+}
+
+.city-name {
+	padding: 1rem;
+	font-size: 1.7rem;
+	font-weight: 500;
+}
+
+.hazy,
+.rainy,
+.cloudy,
+.clear,
+.error-pic {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+.hazy {
+	background: url("../img/haze.jpg");	
+}
+
+.rainy {
+	background: url("../img/rain.jpg");
+}
+
+.cloudy {
+	background: url("../img/cloud.jpg");
+}
+
+.clear {
+	background: url("../img/clear.jpg") center;
+}
+
+.error-pic {
+	background: url("../img/error.jpg") center;
+}
+
+.world-para {
+	font-size: 1.4rem;
+	font-weight: 400;
+}
+.world {
+	background: url("../img/globe.jpg") center;
+	padding: 17rem;
+}
+
+/* slider btn */
+
+.switch {
+	padding: .8rem;
+	border-radius: 1.5rem;
+  }
+

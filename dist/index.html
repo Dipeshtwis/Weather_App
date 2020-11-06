@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	
+	<title>Weather App</title>
+</head>
+<body>
+	<form class="form-container" data-new-form>
+	  <label for="username">Search City:</label>
+	  <input type="text"  class="inputbar" id="city" name="city" data-new-city-input>
+	  <input type="submit" class="searchbar" value="Search" >
+	</form>
+
+
+
+	<div id="container" class="container">
+		<p class="world-para">Search for Weather in your favorite city</p>
+		<div class="world"></div>
+		
+	</div>
+
+	<template id="temp-template">
+		<button class="switch" id="mainSwitch"></button>
+	</template>
+
+	<script src='config.js'></script>
+	<script src="main.js"></script>
+</body>
+</html>
