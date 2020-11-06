@@ -30,14 +30,19 @@ This is a weather application made using javascript. A user can search for any c
 
 ![Home-Page](dist/assets/img/Screenshot_1.png)
 
+## Haze Weather
+
 ![Haze-Weather](dist/assets/img/Screenshot_2.png)
+
+
+## Clear Weather
 
 ![Clear-Sky](dist/assets/img/Screenshot_3.png)
 
 
 ## Live Demo Link <a name = "ll"></a>
 
-[Live Demo](https://dipestwis.github.io/Weather_App/)
+[Live Demo](https://dipeshtwis.github.io/Weather_App/)
 
 
 ## Getting Started <a name = "gs"></a>
